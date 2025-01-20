@@ -27,10 +27,10 @@ const featuredCertifications = ref([
         featured: true
     },
     {
-        title: "ICPEP Regional Champion",
+        title: "ICPEP National 3rd Runner Up",
         image: javaImage,
         alt: "Java Programing",
-        details: "ICPEP Regional Convention, held December 2022 on Cagayan State University - Carig Campus",
+        details: "ICPEP National Convention, held April 2024 on Adamson University",
         featured: true
     }
 ])
