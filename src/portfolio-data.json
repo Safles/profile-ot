@@ -4,31 +4,31 @@
       "name": "Home",
       "path": "home",
       "component": "HomeSection",
-      "pageTitle": "John Doe | Web Developer & Designer"
+      "pageTitle": "Kzandrei | Web Developer & Designer"
     },
     {
       "name": "About",
       "path": "about",
       "component": "AboutSection",
-      "pageTitle": "About Me | John Doe"
+      "pageTitle": "About Me | Kzandrei"
     },
     {
-      "name": "Licenses and Certifications",
-      "path": "licenses-and-certs",
-      "component": "LicensesCertifications",
-      "pageTitle": "Licenses and Certifications | John Doe"
+      "name": "Achievements and Awards",
+      "path": "achievements-and-awards",
+      "component": "AchievementsAwards",
+      "pageTitle": "Achievements and Awards | Kzandrei"
     },
     {
       "name": "Projects",
       "path": "projects",
       "component": "ProjectsSection",
-      "pageTitle": "Projects | John Doe"
+      "pageTitle": "Projects | Kzandrei"
     },
     {
       "name": "Contact",
       "path": "contacts",
       "component": "ContactSection",
-      "pageTitle": "Contact Me | John Doe"
+      "pageTitle": "Contact Me | Kzandrei"
     }
   ]
 }

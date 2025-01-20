@@ -1,17 +1,21 @@
 <script setup>
 import { ref, onMounted, onUnmounted, computed, inject } from 'vue'
+import myAvatar from '@/assets/images/pogi.jpg'
 
 const data = {
-    "greeting": "Hey there!",
-    "name": "John Doe",
-    "secondaryName": "VU3CXF",
-    "title": "Web Developer & Designer",
-    "subtitle": "Ham Radio Enthusiast"
+    greeting: "Hey there!",
+    name: "Kzandrei Camilo L. Talattad",
+    secondaryName: "Safles",
+    title: "Web Developer & Designer",
+    subtitle: "Gamer",
+    profileImage: myAvatar
 }
 
 const sections = inject('sections')
 
-const contactSection = computed(() => sections.find(section => section.name === 'Contact'))
+const contactSection = computed(() =>
+    sections.find((section) => section.name === 'Contact')
+)
 
 const greetingRef = ref(null)
 const alternatingTextRef = ref(null)
@@ -58,10 +62,10 @@ const alternateText = async () => {
     if (data.secondaryName) {
         while (true) {
             await typeWriter(alternatingTextRef.value, data.name, 100)
-            await new Promise(resolve => setTimeout(resolve, 5000))
+            await new Promise((resolve) => setTimeout(resolve, 5000))
             await eraseText(alternatingTextRef.value)
             await typeWriter(alternatingTextRef.value, data.secondaryName, 100)
-            await new Promise(resolve => setTimeout(resolve, 3000))
+            await new Promise((resolve) => setTimeout(resolve, 3000))
             await eraseText(alternatingTextRef.value)
         }
     } else {
@@ -73,7 +77,7 @@ onMounted(async () => {
     blinkCursor()
     await typeWriter(greetingRef.value, data.greeting)
     showContent.value = true
-    await new Promise(resolve => setTimeout(resolve, 1000)) // Wait for content to fade in
+    await new Promise((resolve) => setTimeout(resolve, 1000)) // Wait for content to fade in
     alternateText()
 })
 
@@ -83,27 +87,34 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <div
-        class="flex flex-col items-center justify-center min-h-screen text-gray-800 dark:text-white p-4 relative overflow-hidden">
-        <div class="text-center z-10 space-y-6">
-            <h1 class="text-4xl md:text-5xl font-bold relative">
-                <span ref="greetingRef" class="inline-block"></span>
-                <span class="inline-block w-0.5 h-8 bg-gray-800 dark:bg-white animate-blink ml-1"
-                    :class="{ 'opacity-0': !showCursor }"></span>
-            </h1>
-            <div ref="contentRef" class="space-y-6 transition-opacity duration-1000"
-                :class="{ 'opacity-0': !showContent, 'opacity-100': showContent }">
-                <h2 class="text-3xl md:text-4xl font-bold">
-                    <span class="text-teal-500 dark:text-teal-400">It's me </span>
-                    <span ref="alternatingTextRef" class="text-yellow-500 dark:text-yellow-400"></span>
-                </h2>
-                <p class="text-xl md:text-2xl">{{ data.title }}</p>
-                <p class="text-lg text-gray-600 dark:text-gray-400">{{ data.subtitle }}</p>
-                <router-link v-if="contactSection" :to="'/' + contactSection.path"
-                    class="inline-block px-8 py-3 font-bold text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1 bg-gradient-to-bl from-primary-400 to-primary-600 hover:from-primary-500 hover:to-primary-700 dark:from-primary-500 dark:to-primary-700 dark:hover:from-primary-600 dark:hover:to-primary-800">
-                    Get in Touch
-                </router-link>
-            </div>
-        </div>
-    </div>
+  <div
+      class="flex flex-col items-center justify-center min-h-screen text-gray-800 dark:text-white p-4 relative overflow-hidden">
+      <!-- Centered and Bigger Picture -->
+      <img
+          :src="data.profileImage"
+          alt="Kzandrei's Picture"
+          class="w-32 h-32 rounded-full border-4 border-white shadow-md dark:border-gray-800 lg:w-48 lg:h-48 z-10"
+      />
+
+      <div class="text-center z-10 space-y-6">
+          <h1 class="text-4xl md:text-5xl font-bold relative">
+              <span ref="greetingRef" class="inline-block"></span>
+              <span class="inline-block w-0.5 h-8 bg-gray-800 dark:bg-white animate-blink ml-1"
+                  :class="{ 'opacity-0': !showCursor }"></span>
+          </h1>
+          <div ref="contentRef" class="space-y-6 transition-opacity duration-1000"
+              :class="{ 'opacity-0': !showContent, 'opacity-100': showContent }">
+              <h2 class="text-3xl md:text-4xl font-bold">
+                  <span class="text-teal-500 dark:text-teal-400">It's me </span>
+                  <span ref="alternatingTextRef" class="text-yellow-500 dark:text-yellow-400"></span>
+              </h2>
+              <p class="text-xl md:text-2xl">{{ data.title }}</p>
+              <p class="text-lg text-gray-600 dark:text-gray-400">{{ data.subtitle }}</p>
+              <router-link v-if="contactSection" :to="'/' + contactSection.path"
+                  class="inline-block px-8 py-3 font-bold text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1 bg-gradient-to-bl from-primary-400 to-primary-600 hover:from-primary-500 hover:to-primary-700 dark:from-primary-500 dark:to-primary-700 dark:hover:from-primary-600 dark:hover:to-primary-800">
+                  Get in Touch
+              </router-link>
+          </div>
+      </div>
+  </div>
 </template>

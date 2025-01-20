@@ -1,78 +1,41 @@
 <script setup>
 import { ref, computed } from 'vue'
-import awsCFLImage from '@/assets/images/aws-certified-cloud-practitioner.png'
-import awsDAImage from '@/assets/images/aws-certified-associate.png'
-import radioImage from '@/assets/images/radio.png'
+import javaImage from '@/assets/images/java.png'
+
 import Carousel from '../TheCarousel.vue'
 
 const featuredCertifications = ref([
     {
-        title: "AWS Cloud Practitioner",
-        image: awsCFLImage,
-        alt: "AWS Cloud Practitioner Certification Badge",
-        details: "Validates overall understanding of the AWS Cloud",
-        verifyLink: "https://aws.amazon.com/verification",
+        title: "ICPEP Regional Champion",
+        image: javaImage,
+        alt: "Java Programing",
+        details: "ICPEP Regional Convention, held December 2022 on Cagayan State University - Carig Campus",
         featured: true
     },
     {
-        title: "AWS Certified Developer - Associate",
-        image: awsDAImage,
-        alt: "AWS Developer Associate Certification Badge",
-        details: "Design, develop, and manage robust, secure, scalable, highly available, and dynamic solutions to drive business objectives",
-        verifyLink: "https://aws.amazon.com/verification",
+        title: "ICPEP National 3rd Runner Up",
+        image: javaImage,
+        alt: "Java Programing",
+        details: "ICPEP National Convention, held January 2023 on Laoag City, Ilocos Norte",
         featured: true
     },
     {
-        title: "Amateur Wireless Station license",
-        image: radioImage,
-        alt: "Amateur Radio License Badge",
-        details: "Licensed amateur radio operator with expertise in wireless communications",
+        title: "ICPEP Regional Champion",
+        image: javaImage,
+        alt: "Java Programing",
+        details: "ICPEP Regional Convention, held November 2023 on Nueva Vizcaya State University",
+        featured: true
+    },
+    {
+        title: "ICPEP Regional Champion",
+        image: javaImage,
+        alt: "Java Programing",
+        details: "ICPEP Regional Convention, held December 2022 on Cagayan State University - Carig Campus",
         featured: true
     }
 ])
 
-const otherCertifications = ref([
-    {
-        title: "React Developer",
-        image: "/react-certification.png",
-        alt: "React Developer Certification",
-        featured: false
-    },
-    {
-        title: "Vue.js Developer",
-        image: "/vue-certification.png",
-        alt: "Vue.js Developer Certification",
-        featured: false
-    },
-    {
-        title: "TypeScript",
-        image: "/typescript-certification.png",
-        alt: "TypeScript Certification",
-        featured: false
-    },
-    {
-        title: "Node.js",
-        image: "/nodejs-certification.png",
-        alt: "Node.js Developer Certification",
-        featured: false
-    },
-    {
-        title: "MongoDB",
-        image: "/mongodb-certification.png",
-        alt: "MongoDB Certification",
-        featured: false
-    },
-    {
-        title: "Docker",
-        image: "/docker-certification.png",
-        alt: "Docker Certification",
-        featured: false
-    }
-])
-
-const allCertifications = computed(() => [...featuredCertifications.value, ...otherCertifications.value])
-const hasOtherCertifications = computed(() => otherCertifications.value.length > 0)
-const shouldShowOtherCertificationsCarousel = computed(() => otherCertifications.value.length > 4)
+const allCertifications = computed(() => [...featuredCertifications.value])
 
 const featuredGridCols = computed(() => {
     const count = featuredCertifications.value.length

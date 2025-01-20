@@ -5,35 +5,41 @@ import Carousel from '../TheCarousel.vue';
 
 const data = [
     {
-        "title": "Project 1",
-        "description": "A Vue.js web application for task management.",
+        "title": "Instrumentally",
+        "description": "A React.js web application for scheduled surgery management.",
         "link": "#",
-        "technologies": ["Vue.js", "Vuex", "Tailwind CSS", "Firebase"]
+        "technologies": ["React.js", "MySQL", "Tailwind CSS", "Node.js"]
     },
     {
-        "title": "Project 2",
-        "description": "An e-commerce platform built with Vue and Node.js.",
+        "title": "CMS - Classroom Management System",
+        "description": "A native web application for managing classroom schedules.",
         "link": "#",
-        "technologies": ["Vue.js", "Node.js", "Express", "MongoDB"]
+        "technologies": ["MySQL", "Bootstrap", "JavaScript", "Node.js"]
     },
     {
-        "title": "Project 3",
-        "description": "A responsive portfolio website using Vue and Tailwind CSS.",
+        "title": "LGU Mayoyao File Management Systems",
+        "description": "A Vue.js web application for managing files and approval",
         "link": "#",
-        "technologies": ["Vue.js", "Tailwind CSS", "Vite"]
+        "technologies": ["Django", "Vue.js", "PostgreSQL", "Tailwind CSS"]
     },
     {
-        "title": "Project 4",
-        "description": "A real-time chat application with Vue and Firebase.",
+        "title": "Philip Rice Dealer",
+        "description": "A Vue.js web application for managing warehouse stocks",
         "link": "#",
-        "technologies": ["Vue.js", "Firebase", "Vuex", "Vue Router"]
+        "technologies": ["Django", "Vue.js", "MySQL", "Bootstrap"]
     },
     {
-        "title": "Project 5",
-        "description": "Another real-time chat application with Vue and Firebase.",
+        "title": "Home Owners Association - Novaliches",
+        "description": "A Vue.js web application for managing organization of Home Owners",
         "link": "#",
-        "technologies": ["Vue.js", "Firebase", "Vuex", "Vue Router"]
-    }
+        "technologies": ["Django", "Vue.js", "MySQL", "Bootstrap"]
+    },
+    {
+        "title": "RKMS - Room Key Management System",
+        "description": "A Larvel web application for managing files and approval",
+        "link": "#",
+        "technologies": ["Laravel","MySQL","Blade"]
+    },
 ]
 
 const responsiveOptions = ref([
